@@ -1,10 +1,66 @@
 [gd_scene load_steps=2 format=3 uid="uid://dbh2kyeta2gkv"]
 
-[ext_resource type="Script" uid="uid://bnm7i8go045xf" path="res://node_2d.gd" id="1_wtcfe"]
+[ext_resource type="Script" uid="uid://6u0qii703l7r" path="res://player.gd" id="1_wtcfe"]
 
-[node name="Player" type="CharacterBody2D"]
+[node name="Level1" type="Node2D"]
+
+[node name="Player" type="CharacterBody2D" parent="."]
 script = ExtResource("1_wtcfe")
 
-[node name="Sprite2D" type="Sprite2D" parent="."]
+[node name="Sprite2D" type="Sprite2D" parent="Player"]
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Player"]
+
+[node name="Camera2D" type="Camera2D" parent="Player"]
+
+[node name="Platforms" type="Node2D" parent="."]
+
+[node name="Ground" type="StaticBody2D" parent="Platforms"]
+
+[node name="Sprite2D" type="Sprite2D" parent="Platforms/Ground"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Platforms/Ground"]
+
+[node name="Platform1" type="StaticBody2D" parent="Platforms"]
+
+[node name="Sprite2D" type="Sprite2D" parent="Platforms/Platform1"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Platforms/Platform1"]
+
+[node name="Platform2" type="StaticBody2D" parent="Platforms"]
+
+[node name="Sprite2D" type="Sprite2D" parent="Platforms/Platform2"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Platforms/Platform2"]
+
+[node name="PLatform3" type="StaticBody2D" parent="Platforms"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Platforms/PLatform3"]
+
+[node name="Sprite2D" type="Sprite2D" parent="Platforms/PLatform3"]
+
+[node name="Hazard" type="Node2D" parent="."]
+
+[node name="Spike1" type="Area2D" parent="Hazard"]
+
+[node name="Sprite2D" type="Sprite2D" parent="Hazard/Spike1"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Hazard"]
+
+[node name="collectibles" type="Node2D" parent="."]
+
+[node name="EnergyOrb1" type="Area2D" parent="collectibles"]
+
+[node name="Sprite2D" type="Sprite2D" parent="collectibles/EnergyOrb1"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="collectibles/EnergyOrb1"]
+
+[node name="UI" type="CanvasLayer" parent="."]
+
+[node name="ScoreLabel" type="Label" parent="UI"]
+offset_right = 40.0
+offset_bottom = 23.0
+
+[node name="HintLabel" type="Label" parent="UI"]
+offset_right = 40.0
+offset_bottom = 23.0
